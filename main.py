@@ -94,7 +94,7 @@ def ray_casting(sc, player_pos, player_angle, lst, h):
             if (x // TILE * TILE, y // TILE * TILE) in lst:
                 depth *= math.cos(player_angle - cur_angle)
                 proj_height = 50  # min(PROJ_COEFF / (depth + 0.0001), HEIGHT)
-                c = 255 / (1 + depth * depth * 0.000005)
+                c = 255 / (1 + depth * depth * 0.000003)
                 color = (c, c, c)
                 pygame.draw.rect(sc, color, (ray * SCALE, HEIGHT - proj_height * h, SCALE, proj_height))
                 break
@@ -241,7 +241,7 @@ cake1 = Cake(flag, maps[2].copy())
 
 while True: # ОСНОВНОЙ ИГРОВОЙ ЦИКЛ
     sc.fill(BLACK)
-    sc.blit(texture, (0, 0))
+    # sc.blit(texture, (0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
@@ -253,7 +253,7 @@ while True: # ОСНОВНОЙ ИГРОВОЙ ЦИКЛ
                 clear_code()
                 while coaf_angle <= angle:
                     sc.fill(BLACK)
-                    sc.blit(texture, (0, 0))
+                    # sc.blit(texture, (0, 0))
                     render_score = font_score.render(f'SCORE: {score}', 1, pygame.Color('black'))
                     sc.blit(render_score, (20, 5))
                     render_score1 = font_score.render(f'RECORD: {record}', 1, pygame.Color('black'))
