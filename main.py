@@ -304,3 +304,10 @@ while True: # ОСНОВНОЙ ИГРОВОЙ ЦИКЛ
 
     pygame.display.flip()
     clock.tick()
+
+
+
+
+'''
+У меня Получилось)
+'''
